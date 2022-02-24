@@ -9,6 +9,7 @@ import sqlite3
 import repository
 
 app = Flask("reward_counter")
+repo = repository.CountRepository(lambda: sqlite3.connect("rewardCount.db"))
 
 
 @dataclasses.dataclass
@@ -47,5 +48,4 @@ def update_count():
 
 
 if __name__ == "__main__":
-    repo = repository.CountRepository(lambda: sqlite3.connect("rewardCount.db"))
     app.run(debug=strtobool(os.environ.get("DEBUG", "False")))

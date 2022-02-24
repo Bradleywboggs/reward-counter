@@ -1,16 +1,25 @@
 import contextlib
-import sqlite3
-from typing import Callable
+from datetime import datetime
+from typing import Callable, Tuple
+import collections
+
+Count = collections.namedtuple("Count", ["count", "updated_ts"])
 
 
 class CountRepository:
     def __init__(self, db_connection: Callable):
         self.db_connection = db_connection
         self.select_query = """
-            SELECT count FROM current_count WHERE id = 0;
+            SELECT count, updated_ts 
+            FROM current_count 
+            WHERE id = 0;
         """
         self.update_query = """
-            UPDATE current_count SET count = :count WHERE id = 0 RETURNING count;
+            UPDATE current_count 
+            SET count = :count,
+                updated_ts = :updated_ts
+            WHERE id = 0 
+            RETURNING count;
         """
 
     @contextlib.contextmanager
@@ -21,12 +30,12 @@ class CountRepository:
         finally:
             conn.close()
 
-    def fetch_count(self) -> int:
+    def fetch_count(self) -> Count:
         with self.connection_manager() as conn:
-            count, = next(conn.execute(self.select_query))
-            return count
+            count, updated_ts, *_ = next(conn.execute(self.select_query))
+            return Count(count, updated_ts)
 
     def update_count(self, count: int):
         with self.connection_manager() as conn:
-            conn.execute(self.update_query, {"count": count})
+            conn.execute(self.update_query, {"count": count, "updated_ts": datetime.utcnow().strftime("%Y-%m-%d")})
             conn.commit()

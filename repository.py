@@ -1,10 +1,20 @@
 import contextlib
+import dataclasses
 from datetime import datetime
 from typing import Callable, Tuple
 import collections
 
 Count = collections.namedtuple("Count", ["count", "updated_ts"])
 
+
+@dataclasses.dataclass
+class Count:
+    count: int
+    _updated_ts: str
+
+    @property
+    def updated_date(self):
+        return datetime.strptime(self._updated_ts, "%Y-%m-%d").date()
 
 class CountRepository:
     def __init__(self, db_connection: Callable):

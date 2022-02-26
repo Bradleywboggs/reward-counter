@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <a href="/dad-jokes">dad-jokes!</a> <a href="/insults">shakespearean-insults</a>
+
+</body>
+</html>
+
+</head><body bgcolor="#E6E6E6"><div align="center"><table cellspacing="0" width="97%" height="1%"><tr><td></td></tr></table><div align="center"><table border="1" cellpadding="0" cellspacing="0" width="99%" bordercolor="#333333" style="border: 1px solid #333333" bgcolor="#FFFFFF" height="456"><tr><td valign="top"><div align="center"><table width="97%" height="10"><tr><td></td></tr></table><div align="center"><table cellspacing="0" width="98%" height="76"><tr><td valign="bottom"><h1 align="center"><font face="Arial" color="#404040">Shakespearean Insults Generator!</font></h1></td><td width="76" valign="top"><p align="center"><img border="0" src="images/siteseen6.png" width="76" height="76"></td></tr></table><table width="97%" height="10"><tr><td></td></tr></table><div align="center"><table cellpadding="0" cellspacing="0" width="98%"><tr><td valign="top" width="37%"><img src="images/william-shakespeare.jpg" width="100%" alt="William Shakespeare"></td><td valign="top"><p><div align="left"><div align="left"><table border="0" cellpadding="0" cellspacing="0" width="99%" height="50" bordercolor="#383838"><tr><td><p align="center">&nbsp;</td></tr></table></div><table border="0" cellpadding="8" cellspacing="0" width="99%" height="60" bgcolor="#E6E6E6" style="border: 1px solid #333333" ><tr><td bgcolor="#E9E9E9"><p align="center"><p align="center"><script language="JavaScript">
+rnd.today=new Date();
+rnd.seed=rnd.today.getTime();
+function rnd() {
+    rnd.seed = (rnd.seed*9301+49597) % 533580;
+    return rnd.seed/(533580.0);
+};
+function rand(number) {
+    return Math.ceil(rnd()*number);
+};
+var first_phrase = [
+    "artless","bawdy","beslubbering","bootless","churlish","clouted",
+    "cockered","craven","currish","dankish","dissembling","droning","errant","fawning",
+    "fobbing","frothy","froward","gleeking","goatish","gorbellied","impertinent",
+    "infectious","jarring","loggerheaded","lumpish","mammering","mangled","mewling",
+    "paunchy","pribbling","puking","puny","qualling","rank","reeky","roguish","ruttish",
+    "saucy","spleeny","spongy","surly","tottering","unmuzzled","vain","venomed",
+    "villainous","warped","wayward","weedy","yeasty","abominable","accursed","adulterate","arrogant","babbling",
+    "barbarous","base","mumbling","overwheening","perfidious","pestilent","poisonous","pragging","rancorous","rascally",
+    "sanctimonious","shameless","slanderous","soulless","spongey","crusty","withered","loathed",
+    "tongueless","traitorous","unwholesome","viperous","greasy","obscene","beggarly","scandalous","creeping",
+    "lascivious","degenerate","meddling"];
+var second_phrase = [
+    "base-court","prick-eared","puisny-tilted","puke-stockinged","open-arsed","bat-fowling","beef-witted","beetle-headed",
+    "boil-brained","clapper-clawed","clay-brained","common-kissing","crook-pated",
+    "dismal-dreaming","dizzy-eyed","doghearted","dread-bolted","earth-vexing",
+    "elf-skinned","fat-kidneyed","fen-sucked","flap-mouthed","fly-bitten",
+    "folly-fallen","fool-born","full-gorged","guts-griping","half-faced","hasty-witted",
+    "hedge-born","hell-hated","idle-headed","ill-bred","ill-nurtured","knotty-pated",
+    "milk-livered","motley-minded","onion-eyed","plume-plucked","pottle-deep",
+    "pox-marked","reeling-ripe","rough-hewn","rude-growing","rump-fed","shard-borne",
+    "sheep-biting","spur-galled","swag-bellied","tardy-gaited","tickle-brained","white-livered",
+    "toad-spotted","urchin-snouted","weather-bitten","shag-haired","tallow-faced","beef-witted",
+    "decayed","deformed","muddy-mottled","hag-born","long-tongued","toad-spotted"];
+var third_phrase = ["baggage","barnacle","bladder","boar-pig","bugbear",
+    "bum-bailey","canker-blossom","clack-dish","clotpole","codpiece","coxcomb","death-token",
+    "dewberry","flap-dragon","flax-wench","flirt-gill","foot-licker","fustilarian",
+    "giglet","gudgeon","haggard","harpy","hedge-pig","horn-beast","hugger-mugger",
+    "joithead","lewdster","lout","maggot-pie","malt-worm","mammet","measle","minnow",
+    "miscreant","moldwarp","mumble-news","nut-hook","pigeon-egg","pignut","pumpion",
+    "puttock","ratsbane","scut","skainsmate","strumpet","varlet","vassal","wagtail",
+    "whey-face","scullion","serpents-egg","callet","slug","bag of guts","punk","bitch-wolf","botch","withered-hag",
+    "mangy-dog","foul deformity","odiferous stench","no bowels","drunkard","turd","bear-whelp","eunuch",
+    "devil-incarnate","filthy rogue","vile worm","writhled shrimp","scurvy-knave","whore-master","malt-horse",
+    "varlet","worms-meat","canker-blossom","carrion","hag-seed","ruinous-butt","contriver","hypocrite","infection",
+    "imbossed carbunkle","eternal devil","execrable-wretch","murderous coward","foul adulterer","ingested-lump","wrinkled-witch",
+    "plebian","strumpet","horse-drench","promise-breaker","incontinent varlet","leprous witch","babbling gossip",
+    "tyrant","purified-cur","misbegotten-divel","mildewed-ear"];
+rand1=rand(first_phrase.length)-1;
+rand2=rand(second_phrase.length)-1;
+rand3=rand(third_phrase.length)-1;
+ var quote ="<b>"+"<font size='4' face=Arial colour=#383838>"+"Thou "+first_phrase[rand1] + " " + second_phrase[rand2] + " " + third_phrase[rand3]+"!"
+document.write(quote);
+</script></td></tr></table></div><div align="left"><table border="0" cellpadding="0" cellspacing="0" width="99%" height="50" bordercolor="#383838"><tr><td><p align="center"><b><font face="Arial"><a href="insults.html">NEXT INSULT!!</a></font></b></td></tr></table></div><p><font face="Arial" color="#383838"><b>RANDOM SHAKESPEAREAN INSULTS GENERATOR - HOW TO CREATE SHAKESPEARE INSULTS!!</b></font></p><ul><li><font face="Arial" color="#383838">We have created a Random Generator for Shakespearean Insults!</font></li><li><font face="Arial" color="#383838">Shakespearean words and insults will be selected at random in a variety of combinations!</font></li><li><font face="Arial" color="#383838">A completely unique Shakespearean Insult will be created!</font></li><li><font face="Arial" color="#383838">Have Fun with the Shakespearean Insults Generator! The Shakespearean Language of the Elizabethan era will never seem boring again!</font></li><li><font face="Arial" color="#383838">Our Random Shakespearean Insults are the best! </font></li></ul></td></tr></table><div align="center"><div align="center"><table cellpadding="0" cellspacing="0" width="98%" height="30"><tr><td width="37%" valign="top"><p align="center"><font face="Arial"><a href="./">William Shakespeare Index</a></font></td><td>&nbsp;</td></tr></table><table cellpadding="0" cellspacing="0" width="728" height="90"><tr><td><p align="center"><!-- Conversant Media 728x90 LEADERBOARD CODE for William Shakespeare Biography --><script type="text/javascript">var vclk_options = {sid:18940,media_type:5,version:"1.4"};</script><script class="vclk_pub_code" type="text/javascript" src="http://cdn.fastclick.net/js/adcodes/pubcode.min.js?sid=18940&media_type=5&version=1.4&exc=1"></script><noscript><a href="http://media.fastclick.net/w/click.here?sid=18940&m=1&c=1" target="_blank"><img src="http://media.fastclick.net/w/get.media?sid=18940&tp=5&d=s&c=1&vcm_acv=1.4" width="728" height="90" border="1"></a></noscript><!-- Conversant Media 728x90 LEADERBOARD CODE for William Shakespeare Biography --></td></tr></table><table width="97%" height="10"><tr><td></td></tr></table><table cellpadding="0" cellspacing="0" width="98%"><tr><td><font face="Arial" color="#383838"><b>Shakespearean Insults Generator</b></font><p><font face="Arial" color="#383838"><b>THE ELIZABETHAN LANGUAGE - &quot;WHY DIDN'T HE USE PLAIN ENGLISH?&quot;</b></font></p><ul><li><font face="Arial" color="#383838">The works of William Shakespeare are often dreaded by students because of the language he uses!</font></li><li><font face="Arial" color="#383838">&quot;Why didn't he use plain, simple English?&quot; is a question often used by students new to the Works of Shakespeare!</font></li><li><font face="Arial" color="#383838">The answer is, of course, that he did! But the Elizabethan language was different to ours!</font></li><li><font face="Arial" color="#383838">There weren't so many words and people used a whole variety of ways to spell them as dictionaries weren't available! (There are at least 16 different Elizabethan spellings of Shakespeare!)</font></li><li><font face="Arial" color="#383838">If Shakespeare was looking for a descriptive word, and couldn't find one he made one up! William Shakespeare invented words, and he used them to good effect when it came to Shakespearean Insults!</font></li></ul></td></tr></table><table width="97%" height="10"><tr><td></td></tr></table><table cellpadding="0" cellspacing="0" width="99%" height="120"><tr><td><p align="center"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- aaa tab bottom responsive --><ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2529405258284775"
+     data-ad-slot="4978493090"
+     data-ad-format="auto"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+

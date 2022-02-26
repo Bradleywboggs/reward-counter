@@ -19,7 +19,7 @@ class Context:
 
     @classmethod
     def from_count(cls, count: repository.Count):
-        if count.updated_ts == datetime.utcnow().strftime("%Y-%m-%d"):
+        if count.updated_date >= datetime.utcnow().date():
             return cls(
                 count=count.count,
                 message="You can only increment this once a day, silly."
@@ -35,16 +35,33 @@ class Context:
         )
 
 
+@app.get("/dad-jokes")
+def get_dad_jokes():
+    return render_template("dadjokes.html")
+
+@app.get("/insults")
+def get_insults():
+    return render_template("insults.html")
+
 @app.get("/")
+def index():
+    return get_count()
+
+
+@app.get("/car-ride-rewards")
 def get_count():
     return render_template("index.html", count=repo.fetch_count().count)
 
 
-@app.post("/")
+@app.post("/car-ride-rewards")
 def update_count():
     ctx = Context.from_count(repo.fetch_count())
     repo.update_count(ctx.count)
     return render_template("index.html", **dataclasses.asdict(ctx))
+
+@app.get("/games/pigs")
+def et_pigs():
+    return render_template("pigs.html")
 
 
 if __name__ == "__main__":

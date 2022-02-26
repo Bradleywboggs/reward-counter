@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <a href="/dad-jokes">dad-jokes!</a> <a href="/insults">shakespearean-insults</a>
+
+        <h2 id='joke'>Get a random  Joke...</h2>
+        <button onClick='getJoke()'>Joke</button>
+        <script>
+           var jokeElement = document.getElementById("joke")
+           function getJoke() {
+                fetch("https://icanhazdadjoke.com/",{
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        console.log(result)
+                        jokeElement.innerHTML = result.joke
+                    })
+                    .catch(error => console.log('error', error));
+            }
+        </script>
+    </body>
+    
+</html>
